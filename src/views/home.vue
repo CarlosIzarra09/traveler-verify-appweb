@@ -1,31 +1,36 @@
 <template>
   <v-container>
     <v-row class="text-center">
-      <v-col cols="12">
+<!--      <v-col cols="12">
         <v-img
-          :src="require('../assets/logo.svg')"
+          :src="require('../assets/logo.png')"
           class="my-3"
           contain
           height="200"
         />
-      </v-col>
+      </v-col>-->
+      <v-container style="height: 100px"></v-container>
 
-      <v-col class="mb-4">
+      <v-col class="mb-4" style="margin-top: 100px">
         <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
+          Comprueba si tu prueba molecular aún es válida
         </h1>
+        <p class="headline">
+          Es necesario demostrar la validez del mismo
+          <br>para poder viajar
+        </p>
 
-        <p class="subheading font-weight-regular">
+<!--        <p class="subheading font-weight-regular">
           For help and collaboration with other Vuetify developers,
           <br>please join our online
           <a
             href="https://community.vuetifyjs.com"
             target="_blank"
           >Discord Community</a>
-        </p>
+        </p>-->
       </v-col>
 
-      <v-col
+<!--      <v-col
         class="mb-5"
         cols="12"
       >
@@ -86,14 +91,24 @@
             {{ eco.text }}
           </a>
         </v-row>
+      </v-col>-->
+    </v-row>
+    <v-row class="text-center" justify="center">
+      <v-col class="mb-5" cols="12" xl="6">
+        <TabMenu></TabMenu>
+
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
+import TabMenu from '../components/tab-menu';
   export default {
     name: 'HelloWorld',
+    components: {
+      TabMenu,
+    },
 
     data: () => ({
       ecosystem: [

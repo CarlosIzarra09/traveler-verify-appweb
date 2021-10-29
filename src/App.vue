@@ -2,55 +2,82 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
+      color="#004F9F"
       dark
+      height="extended"
     >
-      <div class="d-flex align-center">
+      <v-row class="text-center" align="center">
+        <v-col cols="12" xl="2" sm="6" align="center" >
+          <v-img
+              alt="Vuetify Logo"
+              class="shrink mr-2"
+              contain
+              :src="require('../src/assets/Imagen1.png')"
+              transition="scale-transition"
+              width="300"
+
+          />
+
+        </v-col>
+        <v-spacer></v-spacer>
+
+        <v-col cols="12" xl="3" sm="6">
+          <v-container style="background-color: #09ACA8; min-width: 220px" rounded-lg>
+
+            <p style="color: whitesmoke">
+              CONSULTA DE PRUEBAS MOLECULARES COVID - 19
+            </p>
+          </v-container>
+
+        </v-col>
+
+      </v-row>
+<!--      <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          :src="require('../src/assets/Imagen1.png')"
           transition="scale-transition"
-          width="40"
+          width="250"
         />
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
       </div>
 
       <v-spacer></v-spacer>
+      <div class="d-flex align-center">
+        <v-container style="background-color: #09ACA8;height: 80px;min-width: 220px" rounded-lg>
+          <p style="color: whitesmoke">
+            CONSULTA DE PRUEBAS MOLECULARES COVID - 19
+          </p>
+        </v-container>
+      </div>-->
 
-      <v-btn
+
+<!--      <v-btn
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
         target="_blank"
         text
       >
         <span class="mr-2">Latest Release</span>
         <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      </v-btn>-->
     </v-app-bar>
 
     <v-main>
-      <HelloWorld/>
+      <Home/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import Home from './views/home';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    Home,
   },
 
   data: () => ({
