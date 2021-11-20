@@ -29,7 +29,79 @@
             color="basil"
             flat
         >
-          <v-card-text>{{ text }}</v-card-text>
+          <template>
+            <v-form
+                ref="form"
+                v-model="valid"
+                lazy-validation
+            >
+              <v-text-field
+                  v-model="name"
+                  :counter="10"
+                  :rules="nameRules"
+                  label="Name"
+                  required
+              ></v-text-field>
+
+              <v-text-field
+                  v-model="email"
+                  :rules="emailRules"
+                  label="Age"
+                  required
+              ></v-text-field>
+              <v-text-field
+                  v-model="email"
+                  :rules="emailRules"
+                  label="Codigo de Ubigeo"
+                  required
+              ></v-text-field>
+              <v-text-field
+                  v-model="email"
+                  :rules="emailRules"
+                  label="Codigo de test"
+                  required
+              ></v-text-field>
+
+              <v-text-field
+                  v-model="email"
+                  :rules="emailRules"
+                  label="Lugar de Destino(Departamento)"
+                  required
+              ></v-text-field>
+
+
+              <v-checkbox
+                  v-model="checkbox"
+                  :rules="[v => !!v || 'You must agree to continue!']"
+                  label="Do you agree?"
+                  required
+              ></v-checkbox>
+
+              <v-btn
+                  :disabled="!valid"
+                  color="success"
+                  class="mr-4"
+                  @click="submit()"
+              >
+                Validate
+              </v-btn>
+
+              <v-btn
+                  color="error"
+                  class="mr-4"
+                  @click="reset"
+              >
+                Reset Form
+              </v-btn>
+
+              <v-btn
+                  color="warning"
+                  @click="resetValidation"
+              >
+                Reset Validation
+              </v-btn>
+            </v-form>
+          </template>
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -41,13 +113,23 @@ export default {
   name: "tab-menu",
   data () {
     return {
+      nombre:"",
+      uuid:"",
+      edad : 0,
+      resultado :"",
+      ubigeo :"",
+      lugardestino :"",
       tab: null,
+      mensaje:"",
       items: [
         '¿Estoy apto para viajar?', 'Historial de pruebas', 'Verificar prueba',
       ],
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     }
   },
+  methods(){
+
+  }
 }
 </script>
 
