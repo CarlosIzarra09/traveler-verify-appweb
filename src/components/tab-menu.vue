@@ -31,80 +31,80 @@
             flat
         >
           <v-container style="padding: 50px">
-            <template v-if="item.id===1">
-              <v-form
-                  ref="form"
-                  v-model="valid"
-              >
-                <v-text-field
-                    v-model="user.name"
-                    :counter="10"
-                    :rules="nameRules"
-                    label="Name"
-                    required
-                ></v-text-field>
-
-                <v-text-field
-                    v-model="user.age"
-                    label="Age"
-                    :rules="numberRules"
-                    type="number"
-                    required
-                ></v-text-field>
-                <v-text-field
-                    v-model="user.ubigeo"
-                    type="number"
-                    label="Codigo de Ubigeo"
-                    :rules="numberRules"
-                    required
-                ></v-text-field>
-                <v-text-field
-                    v-model="user.uuid"
-                    type="number"
-                    label="Codigo de test"
-                    :rules="numberRules"
-                    required
-                ></v-text-field>
-
-
-                <v-select
-                    v-model="valueDepartment"
-                    :items="deparments"
-                    label="Departamento destino"
-                ></v-select>
-
-
-                <v-checkbox
-                    v-model="checkbox"
-                    :rules="[v => !!v || 'You must agree to continue!']"
-                    label="Acepto los términos de servicio"
-                    required
-                ></v-checkbox>
-
-                <v-btn
-                    :disabled="!valid"
-                    color="success"
-                    class="mr-4"
-                    @click="getRvalue"
-                >
-                  Validate
-                </v-btn>
-
-                <v-btn
-                    color="error"
-                    class="mr-4"
-                    @click="resetForm"
-                >
-                  Reset Form
-                </v-btn>
-
-
-              </v-form>
-            </template>
-
-
+            <table-tests v-if="item.id===3"></table-tests>
           </v-container>
+          <!--<v-container style="padding: 50px">
+                  <template v-if="item.id===1">
+                     <v-form
+                         ref="form"
+                         v-model="valid"
+                     >
+                       <v-text-field
+                           v-model="user.name"
+                           :counter="10"
+                           :rules="nameRules"
+                           label="Name"
+                           required
+                       ></v-text-field>
 
+                       <v-text-field
+                           v-model="user.age"
+                           label="Age"
+                           :rules="numberRules"
+                           type="number"
+                           required
+                       ></v-text-field>
+                       <v-text-field
+                           v-model="user.ubigeo"
+                           type="number"
+                           label="Codigo de Ubigeo"
+                           :rules="numberRules"
+                           required
+                       ></v-text-field>
+                       <v-text-field
+                           v-model="user.uuid"
+                           type="number"
+                           label="Codigo de test"
+                           :rules="numberRules"
+                           required
+                       ></v-text-field>
+
+
+                       <v-select
+                           v-model="valueDepartment"
+                           :items="deparments"
+                           label="Departamento destino"
+                       ></v-select>
+
+
+                       <v-checkbox
+                           v-model="checkbox"
+                           :rules="[v => !!v || 'You must agree to continue!']"
+                           label="Acepto los términos de servicio"
+                           required
+                       ></v-checkbox>
+
+                       <v-btn
+                           :disabled="!valid"
+                           color="success"
+                           class="mr-4"
+                           @click="getRvalue"
+                       >
+                         Validate
+                       </v-btn>
+
+                       <v-btn
+                           color="error"
+                           class="mr-4"
+                           @click="resetForm"
+                       >
+                         Reset Form
+                       </v-btn>
+
+
+                     </v-form>
+                   </template>*/}}
+                   </v-container>-->
 
         </v-card>
       </v-tab-item>
@@ -173,10 +173,12 @@
 <script>
 import PredictionApiService from "../services/prediction-api.service";
 
+import TableTests from "@/components/table-tests";
 
 
 export default {
   name: "tab-menu",
+  components: {TableTests},
   data () {
     return {
       valid: false,
